@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico Interactivo con Flask</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin: 20px 0;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gráfico Interactivo de Datos</h1>
+        <div class="chart-container">
+            <canvas id="miGrafico"></canvas>
+        </div>
+        <button onclick="actualizarDatos()">Actualizar Datos</button>
+    </div>
+
+    <script>
+        let miGrafico;
+
+        function inicializarGrafico(datos) {
+            const ctx = document.getElementById('miGrafico').getContext('2d');
+            
+            if (miGrafico) {
+                miGrafico.destroy();
+            }
+
+            miGrafico = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: datos.labels,
+                    datasets: [{
+                        label: 'Valores Mensuales',
+                        data: datos.valores,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        async function actualizarDatos() {
+            try {
+                const response = await fetch('/datos');
+                const datos = await response.json();
+                inicializarGrafico(datos);
+            } catch (error) {
+                console.error('Error al obtener datos:', error);
+            }
+        }
+
+        // Inicializar el gráfico al cargar la página
+        actualizarDatos();
+    </script>
+</body>
+</html> 

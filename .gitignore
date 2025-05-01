@@ -1,0 +1,63 @@
+# Entornos virtuales
+venv/
+env/
+ENV/
+.env
+
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Archivos de IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Archivos de Flask
+instance/
+.webassets-cache
+flask_session/
+
+# Archivos de logs
+*.log
+logs/
+
+# Archivos de base de datos
+*.db
+*.sqlite3
+
+# Archivos de configuración local
+config.local.py
+.env.local
+
+# Archivos de caché
+.cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Archivos temporales
+*.tmp
+*.bak
+*.swp
+*~.nib 
