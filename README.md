@@ -1,92 +1,92 @@
 # Flask Interactive Charts
 
-Aplicación web desarrollada con Flask que muestra gráficos interactivos utilizando Chart.js. Permite visualizar datos dinámicos que se actualizan en tiempo real, con una interfaz moderna y responsiva. Incluye una API REST para la obtención de datos y un diseño intuitivo para la visualización de información.
+A web application built with Flask that displays interactive charts using Chart.js. It allows real-time visualization of dynamic data with a modern and responsive interface. Includes a REST API for data retrieval and an intuitive design for information visualization.
 
-## Características
+## Features
 
-- Gráfico de barras interactivo con Chart.js
-- Actualización dinámica de datos en tiempo real
-- Diseño responsivo y moderno con CSS3
-- Interfaz de usuario intuitiva
-- API REST para obtener datos aleatorios
-- Fácil de personalizar y extender
+- Interactive bar chart with Chart.js
+- Real-time data updates
+- Responsive and modern design with CSS3
+- Intuitive user interface
+- REST API for random data
+- Easy to customize and extend
 
-## Requisitos Previos
+## Prerequisites
 
-- Python 3.8 o superior
-- pip (gestor de paquetes de Python)
-- Git (para clonar el repositorio)
+- Python 3.8 or higher
+- pip (Python package manager)
+- Git (for cloning the repository)
 
-## Instalación
+## Installation
 
-1. Clonar el repositorio:
+1. Clone the repository:
 ```bash
 git clone https://github.com/ksalapeg/flask-interactive-charts.git
 cd flask-interactive-charts
 ```
 
-2. Crear un entorno virtual (opcional pero recomendado):
+2. Create a virtual environment (optional but recommended):
 ```bash
 python -m venv venv
-source venv/bin/activate  # En Windows: venv\Scripts\activate
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
-3. Instalar las dependencias:
+3. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-## Estructura del Proyecto
+## Project Structure
 
 ```
 flask-interactive-charts/
-├── app.py              # Archivo principal de la aplicación Flask
-├── requirements.txt    # Dependencias del proyecto
-├── .gitignore         # Archivos y directorios ignorados por Git
-├── LICENSE            # Licencia MIT
-└── templates/         # Directorio de plantillas
-    └── index.html     # Plantilla principal con el gráfico
+├── app.py              # Main Flask application file
+├── requirements.txt    # Project dependencies
+├── .gitignore         # Git ignored files and directories
+├── LICENSE            # MIT License
+└── templates/         # Templates directory
+    └── index.html     # Main template with chart
 ```
 
-## Uso
+## Usage
 
-1. Iniciar la aplicación:
+1. Start the application:
 ```bash
 python app.py
 ```
 
-2. Abrir el navegador y acceder a:
+2. Open your browser and navigate to:
 ```
 http://localhost:5000
 ```
 
-## Componentes Principales
+## Main Components
 
 ### app.py
-- Configuración de la aplicación Flask
-- Ruta principal ('/') para renderizar la página
-- Ruta de API ('/datos') para obtener datos aleatorios
-- Generación de datos dinámicos
+- Flask application configuration
+- Main route ('/') for page rendering
+- API route ('/datos') for random data
+- Dynamic data generation
 
 ### templates/index.html
-- Interfaz de usuario con diseño responsivo
-- Implementación del gráfico usando Chart.js
-- Estilos CSS integrados
-- Funcionalidad JavaScript para actualización dinámica
-- Diseño moderno y atractivo
+- Responsive user interface
+- Chart.js implementation
+- Integrated CSS styles
+- JavaScript functionality for dynamic updates
+- Modern and attractive design
 
 ## API Endpoints
 
 ### GET /datos
-Retorna datos aleatorios en formato JSON:
+Returns random data in JSON format:
 ```json
 {
-    "labels": ["Enero", "Febrero", "Marzo", "Abril", "Mayo"],
+    "labels": ["January", "February", "March", "April", "May"],
     "valores": [23, 45, 67, 89, 12]
 }
 ```
 
-## Tecnologías Utilizadas
+## Technologies Used
 
 - **Backend**:
   - Flask 3.0.2
@@ -98,32 +98,32 @@ Retorna datos aleatorios en formato JSON:
   - JavaScript
   - Chart.js
 
-## Personalización
+## Customization
 
-### Modificar el Gráfico
-Para cambiar el tipo de gráfico, modifica el parámetro `type` en la configuración de Chart.js en `index.html`:
+### Modify Chart
+To change the chart type, modify the `type` parameter in Chart.js configuration in `index.html`:
 ```javascript
-type: 'bar' // Cambiar a 'line', 'pie', etc.
+type: 'bar' // Change to 'line', 'pie', etc.
 ```
 
-### Cambiar los Datos
-Para modificar los datos generados, edita la función `obtener_datos()` en `app.py`.
+### Change Data
+To modify the generated data, edit the `obtener_datos()` function in `app.py`.
 
-## Contribuir
+## Contributing
 
-1. Fork el proyecto
-2. Crear una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add some AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abrir un Pull Request
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## Licencia
+## License
 
-Este proyecto está bajo la Licencia MIT. Ver el archivo `LICENSE` para más detalles.
+This project is licensed under the MIT License - see the `LICENSE` file for details.
 
-## Contacto
+## Contact
 
-Kevin Alape - [Ksalapeg.270700@gmail.com](mailto:Ksalapeg.270700@gmail.com)
+Kevin Alape - [ksalapeg.270700@gmail.com](mailto:ksalapeg.270700@gmail.com)
 
-Link del Proyecto: [https://github.com/ksalapeg/flask-interactive-charts](https://github.com/ksalapeg/flask-interactive-charts)
+Project Link: [https://github.com/Khawk2/flask-interactive-charts](https://github.com/Khawk2/flask-interactive-charts)
 
